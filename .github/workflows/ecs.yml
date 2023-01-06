@@ -74,7 +74,7 @@ jobs:
         # push it to ECR so that it can
         # be deployed to ECS.
         docker compose build
-        docker tag app-ai-beta-appseed-app $ECR_REGISTRY/$ECR_REPOSITORY:latest
+        docker tag ai-app-beta-appseed-app $ECR_REGISTRY/$ECR_REPOSITORY:latest
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:latest" >> $GITHUB_OUTPUT
 
