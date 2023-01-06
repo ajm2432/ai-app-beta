@@ -16,6 +16,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% include 'includes/scripts.html' %} 
   <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/static/assets/img/favicon.png">
 
@@ -34,7 +35,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="/static/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-
+ 
   <!-- Specific Page CSS goes HERE  -->
   {% block stylesheets %}{% endblock stylesheets %}
 
@@ -43,8 +44,6 @@
 <body class="{% block body_class %}{% endblock %} bg-gray-200">
 
   {% block content %}{% endblock content %}  
-
-  {% include 'includes/scripts.html' %} 
 
    <!-- Specific Page JS goes HERE  -->
    {% block javascripts %}{% endblock javascripts %}
