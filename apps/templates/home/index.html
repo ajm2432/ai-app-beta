@@ -1,0 +1,39 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Sign In {% endblock %} 
+
+{% block body_class %} sign-in-basic {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+{% include 'includes/navigation-transparent.html' %}
+  <div class="page-header min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');" loading="lazy">
+    <span class="mask bg-gradient-dark opacity-5"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
+          <h1 class="text-white mb-4">Chat with A.I, Learn new things</h1>
+          <p class="text-white opacity-8 lead pe-5 me-5">Expand your knowledge by asking questions to artificial intelligence. </p>
+          <div class="buttons">
+            <a href = "/chat">
+            <button type="submit" class="btn btn-white mt-4">Chat with sarcastic Austin</button>
+            </a>
+            <a href = "/emoji-chat">
+              <button type="submit" class="btn btn-white mt-4">Chat with emojis</button>
+              </a>
+            <button type="button" class="btn text-white shadow-none mt-4">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'includes/footer-auth.html' %} 
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
