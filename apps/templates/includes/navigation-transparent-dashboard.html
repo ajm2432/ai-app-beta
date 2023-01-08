@@ -14,16 +14,23 @@
           <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
         </li>
         <li class="nav-item">
-          <div class="dropdown">
-          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Learn More
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/about-us.html">About Us</a></li>
-            <li><a class="dropdown-item" href="/contact-us.html">Contact Us</a></li>
+          <a class="nav-link active" aria-current="page" href="/about-us.html">About Us</a>
         </li>
-          </ul>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/contact-us.html">Contact Us</a>
+        </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link " href="/dashboard.html">
+            <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">Profile</p>
+          </a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('authentication_blueprint.logout') }}">
+            <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign OUT">Logout</p>
+          </a>
+        </li> 
+        {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com">
             <i class="fab fa-twitter"></i>
@@ -39,25 +46,12 @@
             <i class="fab fa-instagram"></i>
           </a>
         </li>
-        {% if current_user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link " href="/dashboard.html">
-            <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">Profile</p>
-          </a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('authentication_blueprint.logout') }}">
-            <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign OUT">Logout</p>
-          </a>
-        </li> 
         <li class="input-group d-flex align-items-center mb-0">
           <label class="switch theme-switch">
               <input type="checkbox" class="bsc" checked="">
               <span class="slider"></span>
           </label>
         </li>       
-        {% endif %}
-        
       </ul>
     </div>
     </div>
