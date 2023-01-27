@@ -28,25 +28,11 @@
                 </div>
               </div>
             </div>
-            <div class="card-body">
-              <form role="form" method="post" action="" class="text-start" autocomplete="off">
-                {{ form.hidden_tag() }} 
-                <div class="input-group input-group-outline mb-3"></div>
-                {% if msg %}
-                {{ msg }}
-                <div class="text-center">
-                  <button type="submit" href="/chat"
-                          class="btn bg-gradient-info text-white w-100 my-4 mb-2">New Question</button>
-                {% else %}
-            
-                {{ form.chat(class="form-control", placeholder="Ask me anything") }}
-                <div class="text-center">
-                  <button type="submit" name="chat"
-                          class="btn bg-gradient-info text-white w-100 my-4 mb-2">Ask</button>
-                {% endif %}
-                
-                </div>
-              </form>
+            <div class="container" id="conversation"></div>
+            <div method="post" action="" class="text-start" autocomplete="off" id="input-area">
+              <input type="text" id="message-input" placeholder="Type your message here...">
+              <button id="send-button">Send</button>
+            </div>   
             </div>
           </div>
         </div>
