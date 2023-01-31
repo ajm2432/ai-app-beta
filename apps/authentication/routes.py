@@ -84,6 +84,8 @@ def SignUp():
                                     success=True,
                                     form=create_account_form)   
         else:
+            session['username'] = username
+            print(session)
             return redirect(url_for('authentication_blueprint.verify'))
     else:
         return render_template('accounts/SignUp.html', form=create_account_form)
@@ -91,12 +93,11 @@ def SignUp():
 def verify():
     create_account_form = CreateAccountForm(request.form)
     if 'verify' in request.form:
-        username = request.form['username']
         code = request.form['code']
         client = boto3.client('cognito-idp',region_name='us-east-1')
         response = client.confirm_sign_up(
         ClientId=os.getenv('COGNITO_APP_CLIENT_ID'),
-        Username=username,
+        Username=session['username'],
         ConfirmationCode=code
     )   
         if response:

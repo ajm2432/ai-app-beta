@@ -1,6 +1,6 @@
 
 from apps.home import blueprint
-from flask import render_template, request, Response, jsonify
+from flask import render_template, request, Response, jsonify,session
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 import os
@@ -65,9 +65,11 @@ def send_message():
 @blueprint.route('/chat', methods=['GET', 'POST'])
 @login_required
 def chat():
-    return render_template('chat/chat.html')
+    username = session.get('username')
+    return render_template('chat/chat.html', username=username)
                             
 @blueprint.route('/emoji-chat', methods=['GET', 'POST'])
 @login_required
 def chatemoji():
-    return render_template('chat/chat.html')
+    username = session.get('username')
+    return render_template('chat/chat.html', username=username)

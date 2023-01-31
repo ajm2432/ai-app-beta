@@ -2,6 +2,7 @@
 const messageInput = document.getElementById("message-input");
 const sendButton = document.getElementById("send-button");
 const conversation = document.getElementById("conversation");
+const username = document.getElementById("username").textContent;
 // Add an event listener to the send button to handle sending messages
 sendButton.addEventListener("click", sendMessage);
 
@@ -12,7 +13,7 @@ function sendMessage() {
   // Display the bot's response in the conversation area
   const userMessage = document.createElement("div");
   userMessage.className = "container bg-gradient-info rounded p-2 text-white float-start"
-  userMessage.innerHTML = "User: " + message;
+  userMessage.innerHTML = username +": " + message;
   conversation.appendChild(userMessage);
   // Send the message to the OpenAI API
   if(window.location.pathname == '/chat'){
