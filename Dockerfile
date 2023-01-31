@@ -9,7 +9,7 @@ COPY requirements.txt .
 # install python dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
-ENV COGNITO_APP_CLIENT_ID="4cvqoq3c9dffm88ll9cf395e01"
+ENV COGNITO_APP_CLIENT_ID="5vn4ff8nvuvvqe5aihdt18ruvp"
 ENV OPENAI_API_KEY="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"
 COPY . .
 
