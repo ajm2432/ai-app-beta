@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/fontawesome.css">
     <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/templatemo-host-cloud.css">
     <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/owl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 {% endblock stylesheets %}
 
 {% block content %}
@@ -50,7 +51,7 @@
   </div>
   <!-- Banner Ends Here -->
   <!-- Services Starts Here -->
-  <div class="services-section">
+  <div class="services-section" id="serviceSection">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -284,7 +285,6 @@
   </div> -->
   <!-- Testimonials Ends Here -->
   {% include 'includes/footer.html' %} 
-
   <!-- Footer Starts Here -->
   <!-- <footer>
     <div class="container">
@@ -360,8 +360,7 @@
 <script src="{{ config.ASSETS_ROOT }}/js/custom.js"></script>
 <script src="{{ config.ASSETS_ROOT }}/js/owl.js"></script>
 <script src="{{ config.ASSETS_ROOT }}/js/accordions.js"></script>
-
-
+<script src="{{ config.ASSETS_ROOT }}/js/core/jquery.min.js"></script>
 <script language = "text/Javascript"> 
   cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
   function clearField(t){                   //declaring the array outside of the
@@ -372,6 +371,15 @@
       }
   }
 </script>
+<script>
+  window.addEventListener("scroll", function() {
+  var yourDiv = document.getElementById("serviceSection");
+  var rect = serviceSection.getBoundingClientRect();
 
+  if (rect.top) {
+    yourDiv.classList.add("slide-in-left");
+  }
+});
+</script>
 {% endblock javascripts %}
 

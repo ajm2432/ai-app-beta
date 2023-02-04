@@ -351,13 +351,24 @@ header {
 }
 
 /* Banner Style */
-.banner {
+.banner
+{
 	background-image: url(../images/banner-bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 300px 0px;
 	background-position: center center;
-}
+	animation: slide-in-right 1s forwards;
+  }
+  
+  @keyframes slide-in-right {
+	from {
+	  transform: translateX(100%);
+	}
+	to {
+	  transform: translateX(0);
+	}
+  } 
 .banner .caption {
 	text-align: center;
 }
@@ -483,11 +494,24 @@ header {
 }
 
 
-
 /* Services Style */
 .services-section {
 	margin-top: 140px;
 }
+
+.slide-in-left {
+	animation: slide-in-left 1s forwards;
+}
+
+@keyframes slide-in-left {
+  from {
+	transform: translateX(-100%);
+  }
+  to {
+	transform: translateX(0);
+  }
+}
+  
 .services-section .section-heading h2 {
 	color: #1e1e1e;
 }
@@ -521,7 +545,10 @@ header {
 	letter-spacing: 0.5px;
 	margin-bottom: 30px;
 }
-
+.services-section .left{
+    transform: translateX(-200px);
+    opacity: 0;
+}
 
 /* Pricing Style */
 .pricing-section {
