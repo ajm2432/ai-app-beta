@@ -20,5 +20,6 @@ ENV COGNITO_APP_CLIENT_ID="5vn4ff8nvuvvqe5aihdt18ruvp"
 ENV COGNITO_USER_POOL_ID="us-east-1_nm9trbKXM"
 ENV OPENAI_API_KEY="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"
 COPY . .
+RUN chmod +x copy_secrets.sh
 # gunicorn
 CMD ./copy_secrets.sh
