@@ -16,9 +16,10 @@ from apps.authentication.models import Users
 @login_manager.user_loader
 def user_loader(id):
     if 'access_token' not in session:
-        return None
+        return None 
     user = Users()
-    user.id = id
+    user.id = Users.get_user()
+    print(user)
     return user
 
 @blueprint.route('/')
@@ -44,10 +45,10 @@ def login():
             }
         )
         if auth_response['AuthenticationResult']:
-            user = Users()
-            user.id = auth_response['AuthenticationResult']['IdToken']
-            session['access_token'] = auth_response['AuthenticationResult']['AccessToken']
             session['username'] = username
+            user = Users()
+            user.id = Users.get_user()
+            session['access_token'] = auth_response['AuthenticationResult']['AccessToken']
             login_user(user)
             return redirect(url_for('home_blueprint.index'))
 
@@ -113,7 +114,6 @@ def verify():
 def logout():
     logout_user()
     return redirect(url_for('authentication_blueprint.login'))
-
 
 # Errors
 

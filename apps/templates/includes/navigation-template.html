@@ -28,7 +28,7 @@
       {% if current_user.is_authenticated %}
       <div class="functional-buttons">
         <ul>
-          <li><a href="/dashboard.html">Profile</a></li>
+          <li><a href="/profile">Profile</a></li>
           <li><a href="{{ url_for('authentication_blueprint.logout') }}">Logout</a></li>
         </ul>
       </div>

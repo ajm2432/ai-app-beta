@@ -5,9 +5,10 @@ from flask_login import login_required
 from jinja2 import TemplateNotFound
 import os
 from apps.chat import blueprint
-from apps.chat.forms import ChatForm
+from apps.authentication.forms import LoginForm
 import requests
 import openai
+import boto3
 
 def get_fine_tune_data():
     openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -73,3 +74,25 @@ def chat():
 def chatemoji():
     username = session.get('username')
     return render_template('chat/chat.html', username=username)
+
+@blueprint.route('/admin', methods=['GET', 'POST'])
+@login_required
+def admin():
+    username = session.get('username')
+    client = boto3.client('cognito-idp',region_name='us-east-1', aws_access_key_id=os.getenv('AWS_ACCESS_KEY'),
+         aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'))
+    response = client.list_users_in_group(
+        UserPoolId=os.getenv('COGNITO_USER_POOL_ID'),
+        GroupName="Admin"
+    )
+    users = response['Users']
+    for user in users:
+        if user['Username'] == username:
+            print("User Authorized")
+            return render_template('admin-dash/dashboard.html', username=username)
+        else:
+            return render_template('home/page-403.html'), 403
+@login_required
+def profile():
+    username = session.get('username')
+    return render_template('home/profile.html', username=username)
