@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Replace <REGION> with your AWS region code
+## Replace <REGION> with your AWS region code
 REGION="us-east-1"
 
 # Replace <SECRET_NAME> with the name of your secret
