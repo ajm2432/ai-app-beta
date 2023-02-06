@@ -1,5 +1,5 @@
 
-bind = '0.0.0.0:5050'
+bind = '0.0.0.0:80'
 workers = 1
 accesslog = '-'
 loglevel = 'debug'
