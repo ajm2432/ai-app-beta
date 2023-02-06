@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::564674469920:role/dev-ai-app-ecs-task-execution-role-b5fa",
+  "executionRoleArn": "arn:aws:iam::564674469920:role/dev-ai-app-ecs-task-execution-role-6ab4",
   "containerDefinitions": [
     {
       "dnsSearchDomains": [],
@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "ecs/dev-ai-app-b5fa",
+          "awslogs-group": "ecs/dev-ai-app-6ab4",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -42,11 +42,11 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": [],
-      "memory": 4096,
-      "memoryReservation": 2048,
+      "memory": 512,
+      "memoryReservation": 512,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "564674469920.dkr.ecr.us-east-1.amazonaws.com/dev-ai-app-repo-b5fa:latest",
+      "image": "564674469920.dkr.ecr.us-east-1.amazonaws.com/dev-ai-app-repo-6ab4:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -67,14 +67,14 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "4096",
-  "taskRoleArn": "arn:aws:iam::564674469920:role/dev-ai-app-ecs-task-execution-role-b5fa",
+  "memory": "512",
+  "taskRoleArn": "arn:aws:iam::564674469920:role/dev-ai-app-ecs-task-execution-role-6ab4",
   "compatibilities": [
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:564674469920:task-definition/dev-ai-app-td-b5fa:1",
-  "family": "dev-ai-app-td-b5fa",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:564674469920:task-definition/dev-ai-app-td-6ab4:1",
+  "family": "dev-ai-app-td-6ab4",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -146,7 +146,7 @@
     "operatingSystemFamily": "LINUX",
     "cpuArchitecture": "X86_64"
   },
-  "cpu": "1024",
+  "cpu": "256",
   "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
