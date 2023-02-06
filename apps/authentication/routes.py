@@ -24,7 +24,7 @@ def user_loader(id):
 
 @blueprint.route('/')
 def route_default():
-     return render_template('home/index.html', segment='index')
+     return redirect(url_for('authentication_blueprint.login'))
 
 
 # Login & Registration
@@ -32,7 +32,7 @@ def route_default():
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)
-    if 'login' in request.form:
+    if request.form:
         username = request.form['username']
         password = request.form['password']
         client = boto3.client('cognito-idp',region_name='us-east-1')
@@ -53,7 +53,7 @@ def login():
             return redirect(url_for('home_blueprint.index'))
 
     else:
-        return render_template('accounts/login.html',
+        return render_template('accounts/login-test.html',
                                form=login_form)
 
 @blueprint.route('/SignUp', methods=['GET', 'POST'])

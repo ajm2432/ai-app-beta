@@ -43,15 +43,31 @@
                   <div class="brand-logo">
                     <img src="{{ config.ASSETS_ROOT }}/images/logo.svg" alt="logo">
                   </div>
-                  <h4>Please enter the verification code sent to your email</h4>
+                  <h4>Hello! let's get started</h4>
+                  <h6 class="fw-light">Sign in to continue.</h6>
                   <form class="pt-3" role="form" method="post" action="">
                     <div class="form-group">
-                        {{ form.password(class="form-control", type="string", placeholder="Verification Code") }}
+                        {{ form.username(class="form-control", placeholder="Username") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password(class="form-control", type="password", placeholder="Password") }}
                     </div>
                     <div class="text-center">
-                        <button type="submit" name="verify" 
-                                class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign Up</button>
+                        <button type="submit" name="login" 
+                                class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign in</button>
                       </div>
+                    <div class="my-2 d-flex justify-content-between align-items-center">
+                      <div class="form-check">
+                        <label class="form-check-label text-muted">
+                          <input type="checkbox" class="form-check-input">
+                          Keep me signed in
+                        </label>
+                      </div>
+                      <a href="#" class="auth-link text-black">Forgot password?</a>
+                    </div>
+                    <div class="text-center mt-4 fw-light">
+                      Don't have an account? <a href="/SignUp" class="text-primary">Create</a>
+                    </div>
                   </form>
                 </div>
               </div>

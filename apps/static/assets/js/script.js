@@ -12,7 +12,7 @@ function sendMessage() {
   const message = messageInput.value;
   // Display the bot's response in the conversation area
   const userMessage = document.createElement("div");
-  userMessage.className = "container bg-gradient-info rounded p-2 text-white float-start"
+  userMessage.className = "chat-box left-chat-box bg-gradient-info rounded p-2 text-white"
   userMessage.innerHTML = username +": " + message;
   conversation.appendChild(userMessage);
   // Send the message to the OpenAI API
@@ -40,7 +40,7 @@ function sendMessage() {
       // Display the bot's response in the conversation area
       const botMessage = document.createElement("div");
       botMessage.innerHTML = "Austin A.I: " + data.response;
-      botMessage.className = "container bg-white rounded p-2 text-dark float-end"
+      botMessage.className = "chat-box right-chat-box bg-white rounded p-2 text-dark"
       conversation.appendChild(botMessage);
     });
   }
@@ -59,7 +59,7 @@ function sendMessage() {
         dot += ".";
       }
       botMessage.innerHTML = "Austin A.I" + dot;
-      botMessage.className = "container bg-white rounded p-2 text-dark float-end"
+      botMessage.className = "chat-box right-chat-box bg-white rounded p-2 text-dark"
     }
     
     let intervalId = setInterval(addDot, 500);
@@ -75,7 +75,7 @@ function sendMessage() {
       botMessage.innerHTML = "";
         // Display the bot's response in the conversation area
         botMessage.innerHTML = "Austin A.I: " + data.response;
-        botMessage.className = "container bg-white rounded p-2 text-dark float-end"
+        botMessage.className = "chat-box right-chat-box bg-white rounded p-2 text-dark"
         conversation.appendChild(botMessage);
       });
     }
