@@ -102,10 +102,7 @@ def verify():
         ConfirmationCode=code
     )   
         if response:
-                return render_template('accounts/SignUp.html',
-                                    msg='User created successfully.',
-                                    success=True,
-                                    form=create_account_form)   
+                return render_template('home/demo.html')   
         else:
             return render_template('accounts/Verify.html', form=create_account_form)
     else:

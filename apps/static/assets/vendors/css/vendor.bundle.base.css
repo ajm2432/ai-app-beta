@@ -9,6 +9,12 @@
   -ms-touch-action: auto;
 }
 
+#input-area {
+  position: absolute;
+  bottom: 20;
+  width: 100%;
+}
+
 /*
  * Scrollbar rail styles
  */
