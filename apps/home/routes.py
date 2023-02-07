@@ -8,7 +8,7 @@ from jinja2 import TemplateNotFound
 @blueprint.route('/index')
 def index():
 
-    return render_template('home/emoji-chat.html', segment='index')
+    return render_template('chat/chat.html', segment='index')
 
 
 @blueprint.route('/<template>')
