@@ -24,7 +24,10 @@ def user_loader(id):
 
 @blueprint.route('/')
 def route_default():
-     return redirect(url_for('authentication_blueprint.login'))
+    if current_user.is_authenticated:
+        return redirect(url_for('chat_blueprint.chatemoji'))
+    else:
+        return redirect(url_for('authentication_blueprint.login'))
 
 
 # Login & Registration
@@ -50,7 +53,7 @@ def login():
             user.id = Users.get_user()
             session['access_token'] = auth_response['AuthenticationResult']['AccessToken']
             login_user(user)
-            return redirect(url_for('home_blueprint.index'))
+            return redirect(url_for('chat_blueprint.chatemoji'))
 
     else:
         return render_template('accounts/login-test.html',
