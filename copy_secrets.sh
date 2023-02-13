@@ -16,4 +16,5 @@ AWS_SECRET_ACCESS_KEY=$(aws secretsmanager get-secret-value  --region $REGION --
 export AWS_ACCESS_KEY=$AWS_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 # Verify that the environment variable has been set
+ls -la
 gunicorn --config gunicorn-cfg.py run:app

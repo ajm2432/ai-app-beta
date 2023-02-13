@@ -382,16 +382,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="/stock-predictor" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Stock Predictor</span>
+              <span class="menu-title">Usage</span>
               <i class="menu-arrow"></i>
             </a>
-            <!-- <div class="collapse" id="charts">
+            <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/demo">Tokens</a></li>
               </ul>
-            </div> -->
+            </div>
           </li>
           <!-- <li class="nav-item nav-category">UI Elements</li>
           <li class="nav-item">
@@ -507,67 +507,34 @@
                           <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
                             <div class="card card-rounded">
                               <div class="card-body">
-                                  <div class="brand-logo">
-                                    <img src="{{ config.ASSETS_ROOT }}/images/logo.svg" alt="logo">
-                                   </div>
-                                   <h5 class="card-subtitle card-subtitle-dash">Chat with Austin A.I</h5>
-                                    <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                                      <div class="container" id="conversation"></div>
-                                        <div id= "username" style="display: none;">{{ username }}</div>
-                                          <div method="post" action="" class="text-start" autocomplete="off" id="input-area">
-                                            <input type="text" id="message-input" placeholder="Type your message here...">
-                                            <button id="send-button" class="btn btn-outline-secondary btn-small btn-rounded text-primary" style="margin-top: 8px;">
-                                              Send
-                                            </button>
-                                          </div>
-                                    </div> 
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                   <h4 class="card-title card-title-dash">AAPL Next 5 days</h4>
+                                   <h5 class="card-subtitle card-subtitle-dash">Predictions for the next 5 days</h5>
+                                  </div>
+                                  <div id="performance-line-legend"></div>
                                 </div>
-                              </div>   
+                                <div class="chartjs-wrapper mt-5">
+                                  <canvas id="performaneLine"></canvas>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-lg-4 d-flex flex-column">
                         <div class="row flex-grow">
-                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-sm-6">
-                                    <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
-                                      <div class="circle-progress-width">
-                                        <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
-                                      </div>
-                                      <div>
-                                        <p class="text-small mb-2">Queries Total</p>
-                                        <h4 class="mb-0 fw-bold">260</h4>
-                                      </div>
-                                    </div>
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card card-rounded table-darkBGImg">
+                                <div class="card-body">
+                                  <div class="col-sm-8">
+                                    <h3 class="text-white upgrade-info mb-0">
+                                      Enhance your <span class="fw-bold">A.I model</span> for better results
+                                    </h3>
+                                    <a href="#" class="btn btn-info upgrade-btn">Upgrade Account!</a>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-sm-6">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                      <div class="circle-progress-width">
-                                        <div id="visitperday" class="progressbar-js-circle pr-2"></div>
-                                      </div>
-                                      <div>
-                                        <p class="text-small mb-2">Queries per day</p>
-                                        <h4 class="mb-0 fw-bold">65</h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -575,6 +542,7 @@
             </div>
           </div>
         </div>
+    </div>
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             

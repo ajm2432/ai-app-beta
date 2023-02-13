@@ -10,11 +10,22 @@
       var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
       saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
       saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
+
+      $.ajax({
+        url: '/predict-stock',
+        method: 'GET',
+        success: function(response) {
+            // update the 'data' field of the first dataset with the response data
+            salesTopData.datasets[0].data = response.response;
+            salesTop.update();
+        }
+        });
+
       var salesTopData = {
-          labels: ["SUN","sun", "MON", "mon", "TUE","tue", "WED", "wed", "THU", "thu", "FRI", "fri", "SAT"],
+          labels: ["1", "2", "3", "4", "5"],
           datasets: [{
               label: 'This week',
-              data: [50, 110, 60, 290, 200, 115, 130, 170, 90, 210, 240, 280, 200],
+              data: [],
               backgroundColor: saleGradientBg,
               borderColor: [
                   '#1F3BB3',
@@ -28,7 +39,7 @@
               pointBorderColor: ['#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff',],
           },{
             label: 'Last week',
-            data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+            data: [],
             backgroundColor: saleGradientBg2,
             borderColor: [
                 '#52CDFF',
@@ -42,7 +53,7 @@
               pointBorderColor: ['#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff',],
         }]
       };
-  
+      
       var salesTopOptions = {
         responsive: true,
         maintainAspectRatio: false,

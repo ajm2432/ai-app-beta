@@ -16,3 +16,13 @@ flask_cognito
 boto3
 openai
 # flask_mysqldb
+boto3
+openai
+keras
+gym
+numpy
+pandas
+tensorflow
+scikit-learn
+seaborn
+yfinance
