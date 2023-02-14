@@ -105,7 +105,7 @@ def verify():
         ConfirmationCode=code
     )   
         if response:
-                return render_template('chat/emoji-chat.html')   
+                return render_template('chat/chat.html')   
         else:
             return render_template('accounts/Verify.html', form=create_account_form)
     else:
