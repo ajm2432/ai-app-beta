@@ -1,0 +1,10 @@
+boto3
+openai
+keras
+gym
+numpy
+pandas
+tensorflow
+scikit-learn
+seaborn
+yfinance
