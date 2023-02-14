@@ -10,15 +10,18 @@
       var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
       saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
       saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
-
+      $('#loader').show();
       $.ajax({
         url: '/predict-stock',
         method: 'GET',
+        cache: true,
         success: function(response) {
             // update the 'data' field of the first dataset with the response data
             salesTopData.datasets[0].data = response.response;
             salesTop.update();
+            $('#loader').hide();
         }
+        
         });
 
       var salesTopData = {
