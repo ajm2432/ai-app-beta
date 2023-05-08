@@ -1,6 +1,6 @@
 
-bind = '0.0.0.0:80'
-workers = 1
+bind = '0.0.0.0:5050'
+workers = 4
 accesslog = '-'
 loglevel = 'debug'
 capture_output = True

@@ -16,35 +16,7 @@ function sendMessage() {
   userMessage.innerHTML = username +": " + message;
   conversation.appendChild(userMessage);
   // Send the message to the OpenAI API
-  if(window.location.pathname == '/chat'){
-    let dots = 0;
-    function addDot() {
-      let dot = ".";
-      dots++;
-      if (dots > 3) {
-        dots = 0;
-      }
-      for (let i = 0; i < dots; i++) {
-        dot += ".";
-      }
-      console.log(dot);
-    }
-    setInterval(addDot, 500);
-  fetch("/send-message", {
-    method: "POST",
-    body: JSON.stringify({ message }),
-    headers: { "Content-Type": "application/json" },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // Display the bot's response in the conversation area
-      const botMessage = document.createElement("div");
-      botMessage.innerHTML = "Austin A.I: " + data.response;
-      botMessage.className = "chat-box right-chat-box bg-white rounded p-2 text-dark"
-      conversation.appendChild(botMessage);
-    });
-  }
-  if(window.location.pathname == '/emoji-chat'){
+  if(window.location.pathname == '/'){
     let dots = 0;
     const botMessage = document.createElement("div");
     conversation.appendChild(botMessage);

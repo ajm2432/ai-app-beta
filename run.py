@@ -2,7 +2,6 @@
 
 import os
 from   flask_migrate import Migrate
-from   flask_minify  import Minify
 from   sys import exit
 
 from apps.config import config_dict
@@ -27,7 +26,10 @@ app = create_app(app_config)
 Migrate(app)
 
 if not DEBUG:
-    Minify(app=app, html=True, js=False, cssless=False)
+    app=app
+    html=True 
+    js=False 
+    cssless=False
     
 if DEBUG:
     app.logger.info('DEBUG            = ' + str(DEBUG)             )

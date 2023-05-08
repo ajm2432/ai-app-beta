@@ -1,18 +1,18 @@
 
 from apps.home import blueprint
 from flask import render_template, request
-from flask_login import login_required
+
 from jinja2 import TemplateNotFound
 
 
-@blueprint.route('/index')
+@blueprint.route('/')
 def index():
 
-    return render_template('chat/chat.html', segment='index')
+    return render_template('chat/chat.html', username="Guest")
 
 
 @blueprint.route('/<template>')
-@login_required
+
 def route_template(template):
 
     try:

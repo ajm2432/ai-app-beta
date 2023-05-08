@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, TextAreaField
-from wtforms.validators import Email, DataRequired
+from wtforms import  TextAreaField
+from wtforms.validators import DataRequired
 
 # Chat
 
