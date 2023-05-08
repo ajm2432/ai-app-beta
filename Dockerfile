@@ -14,7 +14,7 @@ RUN yum -y install unzip
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install
-ENV OPENAI_API_KEY="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"
+ENV OPENAI_API_KEY=""
 # install python dependencies
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 COPY . .
