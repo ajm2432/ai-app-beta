@@ -10,4 +10,5 @@ flask-restx
 python-dotenv
 flask_caching
 openai
+Flask[async]
 

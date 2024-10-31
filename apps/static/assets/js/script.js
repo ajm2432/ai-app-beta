@@ -30,7 +30,7 @@ function sendMessage() {
       for (let i = 0; i < dots; i++) {
         dot += ".";
       }
-      botMessage.innerHTML = "Austin A.I" + dot;
+      botMessage.innerHTML = "Helpdesk A.I" + dot;
       botMessage.className = "chat-box right-chat-box bg-white rounded p-2 text-dark"
     }
     
@@ -46,7 +46,7 @@ function sendMessage() {
       clearInterval(intervalId);
       botMessage.innerHTML = "";
         // Display the bot's response in the conversation area
-        botMessage.innerHTML = "Austin A.I: " + data.response;
+        botMessage.innerHTML = "Helpdesk A.I: " + data.response;
         botMessage.className = "chat-box right-chat-box bg-white rounded p-2 text-dark"
         conversation.appendChild(botMessage);
       });
